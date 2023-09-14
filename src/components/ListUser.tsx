@@ -14,7 +14,7 @@ import {
 } from '@tremor/react'
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/outline'
 import { useAppSelector } from '../hooks/store'
-import { UserId } from '../store/users/slice'
+import { UserId } from '../types'
 import useUsersActions from '../hooks/useUsersActions'
 import { Link } from 'react-router-dom'
 

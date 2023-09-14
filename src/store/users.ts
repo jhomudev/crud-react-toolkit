@@ -1,16 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-
-export type UserId = string
-
-export interface User{
-  name: string
-  email: string
-  github:string
-}
-
-export interface UserWithId extends User{
-  readonly id: UserId
-}
+import { User, UserId, UserWithId } from '../types'
 
 const DEFAULT_STATE = [
   {
@@ -109,7 +98,7 @@ const initialState: UserWithId[] = (() => {
   return persistedState ? JSON.parse(persistedState).users : DEFAULT_STATE
 })()
 
-export const sliceUsers = createSlice({
+const sliceUsers = createSlice({
   name: 'users',
   initialState,
   reducers: {

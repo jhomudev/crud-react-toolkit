@@ -1,10 +1,9 @@
 import { Button, Card, Text, TextInput, Title } from '@tremor/react'
 import { ChangeEvent, useEffect, useState } from 'react'
-import useUsersActions from '../hooks/useUsersActions'
-import { toast } from 'sonner'
 import { useNavigate, useParams } from 'react-router-dom'
+import useUsersActions from '../hooks/useUsersActions'
 import { useAppSelector } from '../hooks/store'
-import { UserWithId } from '../store/users/slice'
+import { UserWithId } from '../types'
 
 function FormUser ({ className }: { className: string }) {
   const users = useAppSelector(state => state.users)
@@ -38,11 +37,9 @@ function FormUser ({ className }: { className: string }) {
       return
     }
 
-    const messageToast = id ? 'Usuario modificado' : 'Usuario creado'
     id
       ? modifyUser({ id, name, email, github })
       : addNewUser({ name, email, github })
-    toast.success(messageToast)
     setError(null)
     navigate('/')
     resetFormEntries()

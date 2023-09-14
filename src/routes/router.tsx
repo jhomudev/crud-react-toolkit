@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import App from '../App'
 
-export const router = createBrowserRouter([
+const routes = [
   {
     path: '/',
     element: <App />
@@ -10,4 +10,8 @@ export const router = createBrowserRouter([
     path: '/edit/:id',
     element: <App />
   }
-])
+]
+
+export const router = createBrowserRouter(routes, {
+  basename: '/crud-react-toolkit/'
+})

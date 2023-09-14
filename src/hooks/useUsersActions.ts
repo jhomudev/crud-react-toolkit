@@ -1,4 +1,5 @@
-import { User, UserId, UserWithId, addUser, deleteUserbyId, editUser } from '../store/users/slice'
+import { addUser, deleteUserbyId, editUser } from '../store/users'
+import { User, UserId, UserWithId } from '../types'
 import { useAppDispatch } from './store'
 
 function useUsersActions () {
